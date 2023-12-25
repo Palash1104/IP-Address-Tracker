@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+
+.category {
+    @apply text-[0.8rem] font-bold text-[#787878] tracking-widest
+}
+
+.content {
+    @apply text-[1.8rem] mt-2 w-48
+}
+
+@tailwind utilities;
+
+
+@media only screen and (max-width: 1024px) {
+    .content {
+        @apply text-[1.3rem] mt-2 w-48
+    }
+
+    .category {
+        @apply text-[0.6rem]
+    }
+
+    #map {
+        @apply w-full h-[32rem] top-[-10rem]
+    }
+
+    #displayBlock {
+        @apply mt-5 
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .content {
+        @apply text-[1rem] mt-2 w-48
+    }
+
+    #place, 
+    #isp {
+        @apply w-24
+    }
+
+    #input {
+        @apply text-sm h-10
+    }
+
+    #image {
+        @apply p-[0.9rem]
+    }
+
+    #map {
+        @apply h-[32rem]
+    }
+}
+
+@media only screen and (max-width: 574px) {
+    #displayBlock {
+        @apply flex flex-col gap-2 mt-10 pr-10 w-max items-center
+    }
+
+    #ipAddress, 
+    #timezone {
+        @apply w-24
+    }
+
+    #main {
+        @apply mt-10
+    }
+
+    #title {
+        @apply text-2xl
+    }
+
+    #input {
+        @apply w-[20rem]
+    }
+
+    #body {
+        @apply h-[200px] 
+    }
+
+    #map {
+        @apply top-[-16rem] -z-10 h-[35rem]
+    }
+}
