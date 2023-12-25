@@ -13,6 +13,7 @@ const api = "https://geo.ipify.org/api/v2/country,city?apiKey=at_irsDLniEjJCvet2
 const input = document.getElementById("input");
 const submit = document.getElementById("submit");
 const error = document.getElementById("error");
+const image = document.getElementById("image");
 
 const ipAddress = document.getElementById("ipAddress");
 const place = document.getElementById("place");
@@ -26,6 +27,19 @@ input.addEventListener("input", () => {
 
     if (input.value.length >= 13) {
         submit.disabled = false;
+        image.classList.remove("opacity-50");
+        image.classList.add("opacity-100");
+    } else {
+        submit.disabled = true;
+        image.classList.remove("opacity-100");
+        image.classList.add("opacity-50");
+
+        input.addEventListener("keyup", async (event) => {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                await trackIP();
+            }
+        });
     }
 })
 
